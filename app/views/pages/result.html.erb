@@ -8,8 +8,8 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <th>Time</th>
-            <th>Location of Earthquake</th>
+            <th>Date & Time in PST</th>
+            <th>Location of Earthquake (epicenter)</th>
             <th class="row-value">Magnitude at location</th>
             <th>Distance from LA</th>
             <th>Magnitude at LA</th>
@@ -18,7 +18,7 @@
         <tbody>
           <% @information.each do |info| %>
           <tr>
-            <td><%= info.time %></td>
+            <td><%= info.time.in_time_zone('Pacific Time (US & Canada)').strftime("%F %I:%M%p") %></td>
             <% geo_localization = "#{info.latitude},#{info.longitude}" %>
             <% query = Geocoder.search(geo_localization).first %>
             <td><%= "#{query.city}, #{query.state}" %>
