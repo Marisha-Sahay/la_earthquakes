@@ -1,0 +1,71 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.home-container{
+  text-align: center;
+  // color:white;
+  // background-color: #6E28C7;
+}
+
+.heading {
+  font-size: 50px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-family: "Comic Sans", Comic Sans MS, cursive;
+  text-align: center
+}
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.table-container {
+  padding: 50px 20px 20px 20px;
+}
+
+.result-para{
+  text-align: center;
+  font-family: "Comic Sans", Comic Sans MS, cursive;
+  font-size: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #010035;
+}
+.result-para2 {
+  text-align: center;
+  font-family: "Comic Sans", Comic Sans MS, cursive;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #010035;
+}
+#map{
+    height: 550px;
+    width: 100%;
+    position: relative;
+}
+.row-value{
+  text-align: center;
+}

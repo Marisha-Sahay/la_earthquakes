@@ -1,0 +1,26 @@
+<div class="home-container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h1 class="heading">Hello Stranger!</h1>
+      <p class = "result-para">Welcome to Earthquake Finder.</p>
+      <p class = "result-para">Please get earthquake details in La La Land (your beloved Los Angeles)</p>
+      <p class="result-para2">Choose days of earthquakes</h3>
+      <%= form_tag '/result', method: :post do %>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <%=label_tag :Begin_date %>
+            <%= date_field_tag :date1, Date.today-30 %>
+          </div>
+          <div class="form-group">
+            <%=label_tag :End_date %>
+            <%= date_field_tag :date2, Date.today %>
+          </div>
+          <%= submit_tag "Submit" %>
+        </form>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
