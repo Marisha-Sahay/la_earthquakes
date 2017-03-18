@@ -19,7 +19,10 @@
           <% @information.each do |info| %>
           <tr>
             <td><%= info.time %></td>
-            <td><%= info.place %></td>
+            <% geo_localization = "#{info.latitude},#{info.longitude}" %>
+            <% query = Geocoder.search(geo_localization).first %>
+            <td><%= "#{query.city}, #{query.state}" %>
+            <!-- <td><%= info.place %></td> -->
             <td class="row-value"><%= info.mag %></td>
             <td><%= info.dist_from_la.round %> miles</td>
             <% if info.dist_from_la <= 100 %>
