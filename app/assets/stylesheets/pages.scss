@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .home-container{
   text-align: center;
+  font-family: "Comic Sans", Comic Sans MS, cursive;
   // color:white;
   // background-color: #6E28C7;
 }
@@ -43,6 +44,11 @@ body {
 
 .table-container {
   padding: 50px 20px 20px 20px;
+  font-family: "Comic Sans", Comic Sans MS, cursive;
+  text-align: center;
+}
+.table-head {
+  // color: brown;
 }
 
 .result-para{
