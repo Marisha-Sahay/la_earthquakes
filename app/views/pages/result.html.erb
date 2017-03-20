@@ -19,9 +19,7 @@
           <% @information.each do |info| %>
           <tr>
             <td><%= info.time.in_time_zone('Pacific Time (US & Canada)').strftime("%F %I:%M%p") %></td>
-            <% geo_localization = "#{info.latitude},#{info.longitude}" %>
-            <% query = Geocoder.search(geo_localization).first %>
-            <td><%= "#{query.city}, #{query.state}" %>
+            <td><%= info.place.partition('of ').last %></td>
             <!-- <td><%= info.place %></td> -->
             <td class="row-value"><%= info.mag %></td>
             <td><%= info.dist_from_la.round %> miles</td>
