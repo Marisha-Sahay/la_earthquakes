@@ -18,7 +18,7 @@
         <tbody>
           <% @information.each do |info| %>
           <tr>
-            <td><%= info.time.in_time_zone('Pacific Time (US & Canada)').strftime("%F %I:%M%p") %></td>
+            <td><%= info.time.strftime("%F %I:%M%p") %></td>
             <td><%= info.place.partition('of ').last %></td>
             <!-- <td><%= info.place %></td> -->
             <td class="row-value"><%= info.mag %></td>
