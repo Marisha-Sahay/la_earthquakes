@@ -3,13 +3,13 @@
   <div class="col-md-1"></div>
   <div class="col-md-10">
     <p class="result-para">You asked us to get earthquake details in LA between <%=@date1%> and <%=@date2%></p>
-    <p class = "result-para2"> Want to find out earthquake details for another day? <%= link_to "change date", "/" , class: "result-link"%>
+    <p class = "result-para2"> Want to find out earthquake details for another day? <%= link_to "Change date", "/" , class: "result-link"%>
     <div class="table-container">
       <table class="table table-hover">
-        <thead>
+        <thead class="table-head">
           <tr>
-            <th>Time</th>
-            <th>Location of Earthquake</th>
+            <th>Date & Time in PST</th>
+            <th>Location of Earthquake (epicenter)</th>
             <th class="row-value">Magnitude at location</th>
             <th>Distance from LA</th>
             <th>Magnitude at LA</th>
@@ -18,10 +18,8 @@
         <tbody>
           <% @information.each do |info| %>
           <tr>
-            <td><%= info.time %></td>
-            <% geo_localization = "#{info.latitude},#{info.longitude}" %>
-            <% query = Geocoder.search(geo_localization).first %>
-            <td><%= "#{query.city}, #{query.state}" %>
+            <td><%= info.time.strftime("%F %I:%M%p") %></td>
+            <td><%= info.place.partition('of ').last %></td>
             <!-- <td><%= info.place %></td> -->
             <td class="row-value"><%= info.mag %></td>
             <td><%= info.dist_from_la.round %> miles</td>
